@@ -27,7 +27,7 @@ y = df["quality"]
 
 # ---------------- Preprocessing ----------------
 scaler = StandardScaler()
-X_scaled = X.values
+X_scaled = scaler.fit_transform(X)
 
 # ---------------- Train-test split ----------------
 X_train, X_test, y_train, y_test = train_test_split(
