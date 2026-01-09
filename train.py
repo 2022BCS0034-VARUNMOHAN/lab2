@@ -26,7 +26,7 @@ y = df["quality"]
 
 # ---------------- Preprocessing ----------------
 scaler = StandardScaler()
-X_scaled = scaler.fit_transform(X)
+X_scaled = X.values
 
 # ---------------- Train-test split ----------------
 X_train, X_test, y_train, y_test = train_test_split(
@@ -34,7 +34,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 
 # ---------------- Model ----------------
-model = Lasso(alpha=0.1)
+model = LinearRegression()
 model.fit(X_train, y_train)
 
 # ---------------- Evaluation ----------------
