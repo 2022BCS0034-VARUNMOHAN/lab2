@@ -7,6 +7,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LinearRegression
 from sklearn.linear_model import Lasso
+from sklearn.linear_model import Ridge
 from sklearn.metrics import mean_squared_error, r2_score
 
 # ---------------- Paths ----------------
@@ -34,7 +35,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 
 # ---------------- Model ----------------
-model = LinearRegression()
+model = Ridge(alpha=1.0)
 model.fit(X_train, y_train)
 
 # ---------------- Evaluation ----------------
